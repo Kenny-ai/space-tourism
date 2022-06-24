@@ -16,11 +16,20 @@ module.exports = {
         '55%': '55%',
         '45%': '45%'
       },
+      width: {
+        '55%': '55%',
+        '45%': '45%'
+      },
       fontFamily: {
         'bellefair': ['Bellefair', 'serif'],
-        'barlow': ['Barlow Condensed', 'sans-serif'],
+        'barlow': ['Barlow', 'sans-serif'],
+        'barlow-condensed': ['Barlow Condensed', 'sans-serif'],
+
       },
       fontSize: {
+        '14': '14px',
+        '16': '16px',
+        '24': '24px',
         '28': '28px',
         '32': '32px',
         '56': '56px',
@@ -35,6 +44,14 @@ module.exports = {
         'mobile-destination-bg': 'url(./assets/destination/background-destination-mobile.jpg)',
         'tablet-destination-bg': 'url(./assets/destination/background-destination-tablet.jpg)',
         'desktop-destination-bg': 'url(./assets/destination/background-destination-desktop.jpg)',
+        'mobile-crew-bg': 'url(./assets/crew/background-crew-mobile.jpg)',
+        'tablet-crew-bg': 'url(./assets/crew/background-crew-tablet.jpg)',
+        'desktop-crew-bg': 'url(./assets/crew/background-crew-desktop.jpg)',
+        
+        'mobile-tech-bg': 'url(./assets/technology/background-technology-mobile.jpg)',
+        'tablet-tech-bg': 'url(./assets/technology/background-technology-tablet.jpg)',
+        'desktop-tech-bg': 'url(./assets/technology/background-technology-desktop.jpg)',
+
         'white-gradient': 'linear-gradient(white, white)',
         'gray-gradient': 'linear-gradient(#6b7280, #6b7280)',
       },
@@ -51,9 +68,12 @@ module.exports = {
         'body': '#D0D6F9',
       },
       transitionProperty: {
-        // 'outline': 'outline-offset, outline-color, background-color',
         'bg-size': 'background-size',
       },
+      borderWidth: {
+        '3': '3px',
+        
+      }
     },
   },
   plugins: [],

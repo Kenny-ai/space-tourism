@@ -10,7 +10,7 @@ const MobileNav = () => {
   }
   return (
     <>
-      <div className="sm:hidden w-80 h-screen bg-nav-bg p-6 font-barlow">
+      <div className="sm:hidden w-80 h-screen bg-nav-bg p-6 font-barlow-condensed">
         { <div className="flex justify-end">
           <IconClose
             className="mb-12 cursor-pointer hover:scale-110"
@@ -18,7 +18,7 @@ const MobileNav = () => {
           />
         </div>}
         <nav className="flex flex-col gap-8 text-[16px] tracking-widest">
-          <NavLink to={"/"} className="w-fit">
+          <NavLink to={"/"} className={({isActive}) => isActive ? `w-fit bg-white-gradient bg-3 bg-no-repeat bg-bottom` : ``}>
             <span className="font-bold mr-3">00</span>
             <span className="uppercase bg-white-gradient bg-0 hover:bg-2 bg-bottom bg-no-repeat hover:transition-bg-size duration-300 hover:font-bold pb-1"
             onClick={closeNav}
@@ -27,7 +27,7 @@ const MobileNav = () => {
             </span>
           </NavLink>
 
-          <NavLink to={"/destination"} className="w-fit">
+          <NavLink to={"/destination"} className="">
             <span className="font-bold mr-3">01</span>
             <span className="uppercase bg-white-gradient bg-0 hover:bg-2 bg-bottom bg-no-repeat hover:transition-bg-size duration-300 hover:font-bold pb-1"
             onClick={closeNav}
@@ -36,7 +36,7 @@ const MobileNav = () => {
             </span>
           </NavLink>
 
-          <NavLink to={"/crew"} className="w-fit">
+          <NavLink to={"/crew"} className="">
             <span className="font-bold mr-3">02</span>
             <span className="uppercase bg-white-gradient bg-0 hover:bg-2 bg-bottom bg-no-repeat hover:transition-bg-size duration-300 hover:font-bold pb-1"
             onClick={closeNav}
@@ -45,7 +45,7 @@ const MobileNav = () => {
             </span>
           </NavLink>
 
-          <NavLink to={"/technology"} className="w-fit">
+          <NavLink to={"/technology"} className="">
             <span className="font-bold mr-3">03</span>
             <span className="uppercase bg-white-gradient bg-0 hover:bg-2 bg-bottom bg-no-repeat hover:transition-bg-size duration-300 hover:font-bold pb-1"
             onClick={closeNav}
