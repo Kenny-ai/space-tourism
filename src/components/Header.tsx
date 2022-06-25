@@ -11,8 +11,9 @@ const Header = () => {
     setShowNav(true);
   };
 
-  const normalLink = "uppercase flex items-center gap-1 hover:font-bold hover:border-b-3 hover:border-b-gray-500 ";
-  const activeLink = "uppercase flex items-center gap-1 border-b-3";
+  const normalLink =
+    "uppercase flex items-center gap-1 hover:font-bold bg-0 hover:bg-3 bg-no-repeat bg-bottom hover:bg-gray-gradient hover:transition-bg-size duration-300 hover:text-white";
+  const activeLink = "uppercase flex items-center gap-1 bg-white-gradient bg-3 bg-no-repeat bg-bottom";
 
   return (
     <>

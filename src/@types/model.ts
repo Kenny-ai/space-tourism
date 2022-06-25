@@ -1,6 +1,7 @@
 export interface ContextInterface {
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
+  closeNav: () => void;
   displayObj: displayObjTypes;
   setDisplayObj: React.Dispatch<React.SetStateAction<displayObjTypes>>;
   changeDestination: (clicked: any) => void;

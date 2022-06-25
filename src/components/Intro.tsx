@@ -1,12 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
 
 const Intro = () => {
+  const { closeNav } = useStateContext();
+
   return (
     <div className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative">
       <Header />
 
-      <div className="xl:flex xl:justify-around xl:items-center xl:h-screen">
+      <div
+        className="xl:flex xl:justify-around xl:items-center xl:h-screen"
+        onClick={closeNav}
+      >
         <div className="flex flex-col justify-center items-center mt-4">
           <div className="text-center xl:text-left w-5/6 sm:w-min flex flex-col justify-center items-center">
             <p className="uppercase font-barlow-condensed tracking-0.2 text-[16px] sm:text-28 text-body">
@@ -25,9 +32,11 @@ const Intro = () => {
         </div>
 
         <div className="flex justify-center items-center py-24">
-          <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black aspect-square w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
-            Explore
-          </button>
+          <Link to={"/destination"}>
+            <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black aspect-square w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
+              Explore
+            </button>
+          </Link>
         </div>
       </div>
     </div>
