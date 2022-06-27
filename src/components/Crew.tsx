@@ -1,49 +1,9 @@
-import { crewTypes } from "../@types/model";
 import { useStateContext } from "../Context/StateProvider";
+import { data } from "../data";
 import Header from "./Header";
 import Nav from "./Nav";
 
-export const crew = {
-  douglas: {
-    name: "Douglas Hurley",
-    images: {
-      png: "./assets/crew/image-douglas-hurley.png",
-      webp: "./assets/crew/image-douglas-hurley.webp",
-    },
-    role: "Commander",
-    bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
-  },
-
-  mark: {
-    name: "Mark Shuttleworth",
-    images: {
-      png: "./assets/crew/image-mark-shuttleworth.png",
-      webp: "./assets/crew/image-mark-shuttleworth.webp",
-    },
-    role: "Mission Specialist",
-    bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
-  },
-  victor: {
-    name: "Victor Glover",
-    images: {
-      png: "./assets/crew/image-victor-glover.png",
-      webp: "./assets/crew/image-victor-glover.webp",
-    },
-    role: "Pilot",
-    bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
-  },
-  anouseh: {
-    name: "Anousheh Ansari",
-    images: {
-      png: "./assets/crew/image-anousheh-ansari.png",
-      webp: "./assets/crew/image-anousheh-ansari.webp",
-    },
-    role: "Flight Engineer",
-    bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
-  },
-};
-
-const crewNavs: crewTypes[] = ["douglas", "mark", "victor", "anouseh"];
+const crewNavs = Object.keys(data.crew);
 
 const Crew = () => {
   const { closeNav, displayObj } = useStateContext();
@@ -63,8 +23,8 @@ const Crew = () => {
             <div className="w-5/6 border-b border-b-gray-600 sm:border-0">
               <img
                 className="object-contain h-[225px] sm:h-fit w-[450px] sm:w-fit"
-                src={crew[displayObj.crew].images.webp}
-                alt={crew[displayObj.crew].name}
+                src={data.crew[displayObj.crew].images.webp}
+                alt={data.crew[displayObj.crew].name}
               />
             </div>
           </div>
@@ -77,15 +37,15 @@ const Crew = () => {
             </nav>
             <div className="flex flex-col justify-center items-center text-center xl:text-left xl:items-start">
               <h4 className="uppercase font-bellefair text-gray-400 text-16 sm:text-24 xl:text-32">
-                {crew[displayObj.crew].role}
+                {data.crew[displayObj.crew].role}
               </h4>
 
               <h3 className="uppercase font-bellefair text-24 sm:text-[38px] xl:text-56 tracking-wider mb-4">
-                {crew[displayObj.crew].name}
+                {data.crew[displayObj.crew].name}
               </h3>
 
               <p className="text-body font-barlow px-8 sm:px-24 xl:p-0 xl:w-2/3 sm:mb-8 xl:text-lg leading-6">
-                {crew[displayObj.crew].bio}
+                {data.crew[displayObj.crew].bio}
               </p>
             </div>
           </div>

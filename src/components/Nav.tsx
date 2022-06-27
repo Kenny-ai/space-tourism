@@ -1,6 +1,6 @@
-import React, { useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useStateContext } from "../Context/StateProvider";
-import { technology } from "./Technology";
+import { data } from "../data";
 
 interface Props {
   title: string;
@@ -69,7 +69,7 @@ const Nav = ({ title, navType }: Props) => {
       }`}
       onClick={changeTechDisplay}
     >
-      {Object.keys(technology).indexOf(title) + 1}
+      {Object.keys(data.technology).indexOf(title) + 1}
     </button>
   ) : null;
 };

@@ -11,7 +11,7 @@ export interface ContextInterface {
 
 export type destinationTypes = "moon" | "mars" | "europa" | "titan";
 export type crewTypes = "douglas" | "mark" | "victor" | "anouseh";
-export type technologyTypes = "launchVehicle"| "spacePort" | "spaceCapsule";
+export type technologyTypes = "launchVehicle" | "spaceport" | "spaceCapsule";
 
 export interface displayObjTypes {
   destination: destinationTypes;

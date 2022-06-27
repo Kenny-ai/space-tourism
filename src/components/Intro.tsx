@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
@@ -8,10 +7,11 @@ const Intro = () => {
 
   return (
     <div className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative">
+
       <Header />
 
       <div
-        className="xl:flex xl:justify-around xl:items-center xl:h-screen"
+        className="xl:flex xl:justify-around xl:items-center xl:h-screen sm:mt-12 xl:mt-0"
         onClick={closeNav}
       >
         <div className="flex flex-col justify-center items-center mt-4">

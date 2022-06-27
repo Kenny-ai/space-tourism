@@ -1,43 +1,9 @@
-import { technologyTypes } from "../@types/model";
 import { useStateContext } from "../Context/StateProvider";
+import { data } from "../data";
 import Header from "./Header";
 import Nav from "./Nav";
 
-export const technology = {
-  launchVehicle: {
-    name: "Launch vehicle",
-    images: {
-      portrait: "./assets/technology/image-launch-vehicle-portrait.jpg",
-      landscape: "./assets/technology/image-launch-vehicle-landscape.jpg",
-    },
-    description:
-      "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
-  },
-  spacePort: {
-    name: "Spaceport",
-    images: {
-      portrait: "./assets/technology/image-spaceport-portrait.jpg",
-      landscape: "./assets/technology/image-spaceport-landscape.jpg",
-    },
-    description:
-      "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
-  },
-  spaceCapsule: {
-    name: "Space capsule",
-    images: {
-      portrait: "./assets/technology/image-space-capsule-portrait.jpg",
-      landscape: "./assets/technology/image-space-capsule-landscape.jpg",
-    },
-    description:
-      "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
-  },
-};
-
-const technologyNavs: technologyTypes[] = [
-  "launchVehicle",
-  "spacePort",
-  "spaceCapsule",
-];
+const technologyNavs = Object.keys(data.technology);
 
 const Technology = () => {
   const { closeNav, displayObj } = useStateContext();
@@ -57,13 +23,13 @@ const Technology = () => {
           <div className="transition duration-500 mb-8 xl:w-2/5 w-full">
             <img
               className="xl:hidden object-contain h-[200px] sm:h-fit w-full"
-              src={technology[displayObj.technology].images.landscape}
-              alt={technology[displayObj.technology].name}
+              src={data.technology[displayObj.technology].images.landscape}
+              alt={data.technology[displayObj.technology].name}
             />
             <img
               className="hidden xl:inline object-contain h-[500px] float-right"
-              src={technology[displayObj.technology].images.portrait}
-              alt={technology[displayObj.technology].name}
+              src={data.technology[displayObj.technology].images.portrait}
+              alt={data.technology[displayObj.technology].name}
             />
           </div>
 
@@ -79,11 +45,11 @@ const Technology = () => {
               </h4>
 
               <h4 className="uppercase font-bellefair text-[24px] sm:text-[40px] mb-4 xl:mb-0 xl:text-56">
-                {technology[displayObj.technology].name}
+                {data.technology[displayObj.technology].name}
               </h4>
 
               <p className="test text-body font-barlow px-8 sm:text-16 sm:w-[69%] xl:p-0 xl:w-2/3 sm:mb-8 xl:text-lg">
-                {technology[displayObj.technology].description}
+                {data.technology[displayObj.technology].description}
               </p>
             </div>
           </div>

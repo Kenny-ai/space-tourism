@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as IconClose } from "../assets/shared/icon-close.svg";
 import { useStateContext } from "../Context/StateProvider";
@@ -17,7 +16,7 @@ const MobileNav = () => {
         {
           <div className="flex justify-end">
             <IconClose
-              className="mb-12 cursor-pointer hover:scale-110"
+              className="mb-12 cursor-pointer duration-500 hover:scale-125"
               onClick={closeNav}
             />
           </div>
