@@ -1,20 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
 
 const Intro = () => {
   const { closeNav } = useStateContext();
+  const [trans, setTrans] = useState(true);
+  const [mode, setMode] = useState<"out-in" | "in-out">("in-out");
 
+  useEffect(() => {
+    console.log(trans);
+  }, [trans]);
   return (
     <div className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative">
-
       <Header />
 
       <div
         className="xl:flex xl:justify-around xl:items-center xl:h-screen sm:mt-12 xl:mt-0"
         onClick={closeNav}
       >
-        <div className="flex flex-col justify-center items-center mt-4">
+        {/* <div className="flex flex-col justify-center items-center mt-4">
           <div className="text-center xl:text-left w-5/6 sm:w-min flex flex-col justify-center items-center">
             <p className="uppercase font-barlow-condensed tracking-0.2 text-[16px] sm:text-28 text-body">
               So you want to travel to
@@ -29,14 +35,37 @@ const Intro = () => {
               this world experience!
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="flex justify-center items-center py-24">
-          <Link to={"/destination"}>
+        {/* <div className="flex justify-center items-center py-24"> */}
+        <div className="flex flex-col justify-center items-center py-24">
+          {/* <Link to={"/destination"}>
             <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black aspect-square w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
               Explore
             </button>
-          </Link>
+          </Link> */}
+          {/* <button
+            className="btn bg-blue-500 uppercase py-2 px-7 hover:bg-blue-600 hover:scale-105 rounded-lg duration-500 font-bold"
+            onClick={() => setTrans(!trans)}
+          >
+            {trans ? "Explore button" : "Goodbye world"}
+          </button> */}
+          <SwitchTransition mode={mode}>
+            <CSSTransition
+              key={trans ? "Explore button" : "Goodbye world"}
+              addEndListener={(node, done) => {
+                node.addEventListener("transitioned", done, false);
+              }}
+              classNames="fade"
+            >
+              <button
+                className="bg-blue-500 uppercase py-2 px-7 hover:bg-blue-600 hover:scale-105 rounded-lg duration-500 font-bold w-fit"
+                onClick={() => setTrans(trans => !trans)}
+              >
+                {trans ? "Explore button" : "Goodbye world"}
+              </button>
+            </CSSTransition>
+          </SwitchTransition>
         </div>
       </div>
     </div>
