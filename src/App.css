@@ -10,7 +10,6 @@ body {
   opacity: 0;
   transform: translateX(-100%);
 }
-
 .fade-enter-active {
   opacity: 1;
   transform: translateX(0%);
@@ -20,29 +19,10 @@ body {
   transform: translateX(0%);
 }
 .fade-exit-active {
+  opacity: 0;
   transform: translateX(100%);
-  opacity: 0.5;
-}
-/* .fade-enter-active,
-.fade-exit-active {
-  transition: opacity 500ms, transform 500ms;
-} */
-
-
-
-/* .fade-enter{
-   opacity: 0;
-}
-.fade-exit{
-   opacity: 1;
-}
-.fade-enter-active{
-   opacity: 1;
-}
-.fade-exit-active{
-   opacity: 0;
 }
 .fade-enter-active,
-.fade-exit-active{
-   transition: opacity 500ms;
-} */
+.fade-exit-active {
+  transition: opacity 1000ms, transform 1000ms;
+}
