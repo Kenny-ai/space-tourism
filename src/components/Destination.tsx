@@ -9,15 +9,16 @@ import { useState } from "react";
 const destinationNavs = Object.keys(data.destinations);
 
 const Destination = () => {
-  const { closeNav, displayObj } = useStateContext();
-  const [trans, setTrans] = useState(true);
+  const { closeNav, displayObj, destinationTrans } = useStateContext();
 
   return (
     <div className="bg-mobile-destination-bg sm:bg-tablet-destination-bg lg:bg-desktop-destination-bg bg-cover">
       <div className="sm:mb-6">
         <Header />
       </div>
-      <div onClick={closeNav}>
+      <div
+        // onClick={closeNav}
+      >
         <p className="uppercase font-barlow-condensed tracking-widest mb-8 sm:px-10 text-center sm:text-left text-16 sm:text-[20px] xl:text-28 xl:px-40 xl:mb-24">
           <span className="text-gray-400 font-bold mr-3">01</span>Pick your
           destination
@@ -25,7 +26,7 @@ const Destination = () => {
 
         <SwitchTransition mode={"out-in"}>
           <CSSTransition
-            key={trans ? "Explore button" : "Goodbye world"}
+            key={destinationTrans}
             addEndListener={(node, done) => {
               node.addEventListener("transitionend", done, false);
             }}
@@ -81,12 +82,12 @@ const Destination = () => {
                   </div>
                 </div>
               </div>
-            <button
+            {/* <button
               className="bg-blue-500 uppercase py-2 px-7 hover:bg-blue-600 hover:scale-105 rounded-lg duration-500 font-bold w-fit"
-              onClick={() => setTrans(!trans)}
+              onClick={() => setDestinationTrans("mars")}
             >
-              {trans ? "Explore button" : "Goodbye world"}
-            </button>
+              {""}
+            </button> */}
             </div>
           </CSSTransition>
         </SwitchTransition>
