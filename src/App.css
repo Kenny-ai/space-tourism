@@ -24,10 +24,10 @@ body {
 }
 
 .fade-enter, .fade-exit {
-  transition: opacity 2000ms;
+  transition: opacity 3000ms;
 }
 
 .fade-enter-active,
 .fade-exit-active {
-  transition: opacity 1000ms;
+  transition: opacity 3000ms;
 }

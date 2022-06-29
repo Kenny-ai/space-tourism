@@ -42,6 +42,8 @@ export const StateProvider = ({ children }: Props) => {
 
   const [destinationTrans, setDestinationTrans] = useState<destinationTypes>("moon");
 
+    const [technologyTrans, setTechnologyTrans] =
+      useState<technologyTypes>("launchVehicle");
 
   const values = {
     showNav,
@@ -54,6 +56,8 @@ export const StateProvider = ({ children }: Props) => {
     changeTechnology,
     destinationTrans,
     setDestinationTrans,
+    technologyTrans,
+    setTechnologyTrans,
   };
   return (
     <StateContext.Provider value={values}>{children}</StateContext.Provider>

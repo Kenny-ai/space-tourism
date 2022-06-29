@@ -13,8 +13,8 @@ const Nav = ({ title, navType }: Props) => {
     changeCrew,
     changeTechnology,
     displayObj,
-    destinationTrans,
     setDestinationTrans,
+    setTechnologyTrans,
   } = useStateContext();
 
   const changeDestinationDisplay = () => {
@@ -34,6 +34,10 @@ const Nav = ({ title, navType }: Props) => {
 
   const changeDestinationTrans = () => {
     setDestinationTrans(displayObj.destination);
+  };
+
+  const changeTechnologyTrans = () => {
+    setTechnologyTrans(displayObj.technology);
   };
 
   useLayoutEffect(() => {
@@ -80,7 +84,10 @@ const Nav = ({ title, navType }: Props) => {
           ? `bg-white text-black`
           : `hover:border-white `
       }`}
-      onClick={changeTechDisplay}
+      onClick={() => {
+        changeTechDisplay();
+        changeTechnologyTrans();
+      }}
     >
       {Object.keys(data.technology).indexOf(title) + 1}
     </button>
