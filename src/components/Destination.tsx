@@ -35,7 +35,7 @@ const Destination = () => {
             <div className="flex flex-col justify-center items-center pb-10 xl:flex-row xl:justify-between">
               <div className="xl:w-55% xl:flex xl:justify-center xl:items-center">
                 <img
-                  className="h-48 w-48 sm:h-80 sm:w-80 mb-8 sm:mb-12 xl:mb-0 xl:h-fit xl:w-fit transition duration-500"
+                  className="h-48 w-48 sm:h-80 sm:w-80 mb-8 sm:mb-12 xl:mb-0 xl:h-fit xl:w-fit"
                   src={data.destinations[displayObj.destination].images.webp}
                   alt={data.destinations[displayObj.destination].name}
                 />

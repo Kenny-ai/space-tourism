@@ -24,7 +24,7 @@ body {
 }
 
 .fade-enter, .fade-exit {
-  transition: opacity 1000ms;
+  transition: opacity 2000ms;
 }
 
 .fade-enter-active,
