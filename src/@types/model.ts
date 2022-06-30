@@ -7,10 +7,6 @@ export interface ContextInterface {
   changeDestination: (clicked: any) => void;
   changeCrew: (clicked: any) => void;
   changeTechnology: (clicked: any) => void;
-  destinationTrans: destinationTypes;
-  setDestinationTrans: React.Dispatch<React.SetStateAction<destinationTypes>>;
-  technologyTrans: technologyTypes;
-  setTechnologyTrans: React.Dispatch<React.SetStateAction<technologyTypes>>;
 }
 
 export type destinationTypes = "moon" | "mars" | "europa" | "titan";

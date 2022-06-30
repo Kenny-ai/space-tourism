@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
 
 const Intro = () => {
   const { closeNav } = useStateContext();
-  const [trans, setTrans] = useState(true);
 
-  useEffect(() => {
-    console.log(trans);
-  }, [trans]);
   return (
     <div className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative">
       <Header />
@@ -42,23 +36,6 @@ const Intro = () => {
               Explore
             </button>
           </Link>
-
-          {/* <SwitchTransition mode={"out-in"}>
-            <CSSTransition
-              key={trans ? "Explore button" : "Goodbye world"}
-              addEndListener={(node, done) => {
-                node.addEventListener("transitionend", done, false);
-              }}
-              classNames="fade"
-            >
-              <button
-                className="bg-blue-500 uppercase py-2 px-7 hover:bg-blue-600 hover:scale-105 rounded-lg duration-500 font-bold w-fit"
-                onClick={() => setTrans(!trans)}
-              >
-                {trans ? "Explore button" : "Goodbye world"}
-              </button>
-            </CSSTransition>
-          </SwitchTransition> */}
 
         </div>
       </div>

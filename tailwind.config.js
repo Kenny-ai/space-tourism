@@ -8,9 +8,7 @@ module.exports = {
 
     extend: {
       backgroundColor: {
-        // 'nav-bg': '#0b0d17'
         'nav-bg': '#151821'
-        // 'nav-bg': '#1F293D'
       },
       height: {
         '55%': '55%',
@@ -47,7 +45,6 @@ module.exports = {
         'mobile-crew-bg': 'url(./assets/crew/background-crew-mobile.jpg)',
         'tablet-crew-bg': 'url(./assets/crew/background-crew-tablet.jpg)',
         'desktop-crew-bg': 'url(./assets/crew/background-crew-desktop.jpg)',
-        
         'mobile-tech-bg': 'url(./assets/technology/background-technology-mobile.jpg)',
         'tablet-tech-bg': 'url(./assets/technology/background-technology-tablet.jpg)',
         'desktop-tech-bg': 'url(./assets/technology/background-technology-desktop.jpg)',

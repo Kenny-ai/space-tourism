@@ -8,14 +8,8 @@ interface Props {
 }
 
 const Nav = ({ title, navType }: Props) => {
-  const {
-    changeDestination,
-    changeCrew,
-    changeTechnology,
-    displayObj,
-    setDestinationTrans,
-    setTechnologyTrans,
-  } = useStateContext();
+  const { changeDestination, changeCrew, changeTechnology, displayObj } =
+    useStateContext();
 
   const changeDestinationDisplay = () => {
     changeDestination(title);
@@ -30,14 +24,6 @@ const Nav = ({ title, navType }: Props) => {
   const changeTechDisplay = () => {
     changeTechnology(title);
     localStorage.setItem("technologyDisplay", JSON.stringify(title));
-  };
-
-  const changeDestinationTrans = () => {
-    setDestinationTrans(displayObj.destination);
-  };
-
-  const changeTechnologyTrans = () => {
-    setTechnologyTrans(displayObj.technology);
   };
 
   useLayoutEffect(() => {
@@ -61,10 +47,7 @@ const Nav = ({ title, navType }: Props) => {
           ? `bg-white-gradient bg-3 font-bold text-white`
           : `bg-gray-gradient bg-0 hover:bg-2 hover:transition-bg-size hover:font-bold hover:text-white`
       }`}
-      onClick={() => {
-        changeDestinationDisplay();
-        changeDestinationTrans();
-      }}
+      onClick={changeDestinationDisplay}
     >
       {title}
     </button>
@@ -84,10 +67,7 @@ const Nav = ({ title, navType }: Props) => {
           ? `bg-white text-black`
           : `hover:border-white `
       }`}
-      onClick={() => {
-        changeTechnologyTrans();
-        changeTechDisplay();
-      }}
+      onClick={changeTechDisplay}
     >
       {Object.keys(data.technology).indexOf(title) + 1}
     </button>
