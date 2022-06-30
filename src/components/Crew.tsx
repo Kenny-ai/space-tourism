@@ -23,7 +23,7 @@ const Crew = () => {
             <div className="w-5/6 border-b border-b-gray-600 sm:border-0">
               <img
                 className="object-contain h-[225px] sm:h-fit w-[450px] sm:w-fit"
-                src={data.crew[displayObj.crew].images.webp}
+                src={data.crew[displayObj.crew].images.png}
                 alt={data.crew[displayObj.crew].name}
               />
             </div>

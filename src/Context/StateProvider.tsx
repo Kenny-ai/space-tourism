@@ -40,10 +40,11 @@ export const StateProvider = ({ children }: Props) => {
     setDisplayObj({ ...initialState, technology: clicked });
   };
 
-  const [destinationTrans, setDestinationTrans] = useState<destinationTypes>("moon");
+  const [destinationTrans, setDestinationTrans] =
+    useState<destinationTypes>("moon");
 
-    const [technologyTrans, setTechnologyTrans] =
-      useState<technologyTypes>("launchVehicle");
+  const [technologyTrans, setTechnologyTrans] =
+    useState<technologyTypes>("launchVehicle");
 
   const values = {
     showNav,

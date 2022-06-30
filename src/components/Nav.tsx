@@ -85,8 +85,8 @@ const Nav = ({ title, navType }: Props) => {
           : `hover:border-white `
       }`}
       onClick={() => {
-        changeTechDisplay();
         changeTechnologyTrans();
+        changeTechDisplay();
       }}
     >
       {Object.keys(data.technology).indexOf(title) + 1}

@@ -43,7 +43,7 @@ const Intro = () => {
             </button>
           </Link>
 
-          <SwitchTransition mode={"out-in"}>
+          {/* <SwitchTransition mode={"out-in"}>
             <CSSTransition
               key={trans ? "Explore button" : "Goodbye world"}
               addEndListener={(node, done) => {
@@ -58,7 +58,7 @@ const Intro = () => {
                 {trans ? "Explore button" : "Goodbye world"}
               </button>
             </CSSTransition>
-          </SwitchTransition>
+          </SwitchTransition> */}
 
         </div>
       </div>
