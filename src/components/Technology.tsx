@@ -53,9 +53,9 @@ const Technology = () => {
                     The Terminology...
                   </h4>
 
-                  {/* <h4 className="uppercase font-bellefair text-[24px] sm:text-[40px] mb-4 xl:mb-0 xl:text-56">
+                  <h4 className="uppercase font-bellefair text-[24px] sm:text-[40px] mb-4 xl:mb-0 xl:text-56">
                     {data.technology[displayObj.technology].name}
-                  </h4> */}
+                  </h4> 
 
                   <p className="test text-body font-barlow px-8 sm:text-16 sm:w-[69%] xl:p-0 xl:w-2/3 sm:mb-8 xl:text-lg">
                     {data.technology[displayObj.technology].description}
