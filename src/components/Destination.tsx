@@ -6,7 +6,7 @@ import { data } from "../data";
 const destinationNavs = Object.keys(data.destinations);
 
 const Destination = () => {
-  const { closeNav, displayObj } = useStateContext();
+  const { closeNav, display } = useStateContext();
 
   return (
     <div className="bg-mobile-destination-bg sm:bg-tablet-destination-bg lg:bg-desktop-destination-bg bg-cover">
@@ -23,8 +23,8 @@ const Destination = () => {
           <div className="xl:w-55% xl:flex xl:justify-center xl:items-center">
             <img
               className="h-48 w-48 sm:h-80 sm:w-80 mb-8 sm:mb-12 xl:mb-0 xl:h-fit xl:w-fit"
-              src={data.destinations[displayObj.destination].images.png}
-              alt={data.destinations[displayObj.destination].name}
+              src={data.destinations[display.destination].images.png}
+              alt={data.destinations[display.destination].name}
             />
           </div>
 
@@ -36,10 +36,10 @@ const Destination = () => {
                 ))}
               </nav>
               <h2 className="uppercase font-bellefair text-56 sm:text-80 xl:text-100">
-                {data.destinations[displayObj.destination].name}
+                {data.destinations[display.destination].name}
               </h2>
               <p className="text-body font-barlow px-8 sm:px-24 xl:p-0 sm:mb-8">
-                {data.destinations[displayObj.destination].description}
+                {data.destinations[display.destination].description}
               </p>
 
               <hr className="my-6 w-4/5 xl:w-full border-t-gray-700" />
@@ -50,7 +50,7 @@ const Destination = () => {
                     Avg. Distance
                   </h5>
                   <p className="font-bellefair text-32 uppercase">
-                    {data.destinations[displayObj.destination].distance}
+                    {data.destinations[display.destination].distance}
                   </p>
                 </div>
 
@@ -59,7 +59,7 @@ const Destination = () => {
                     Est. Travel Time
                   </h5>
                   <p className="font-bellefair text-32 uppercase">
-                    {data.destinations[displayObj.destination].travel}
+                    {data.destinations[display.destination].travel}
                   </p>
                 </div>
               </div>

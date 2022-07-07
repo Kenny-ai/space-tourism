@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Nav = ({ title, navType }: Props) => {
-  const { changeDestination, changeCrew, changeTechnology, displayObj } =
+  const { changeDestination, changeCrew, changeTechnology, display } =
     useStateContext();
 
   const changeDestinationDisplay = () => {
@@ -43,7 +43,7 @@ const Nav = ({ title, navType }: Props) => {
   return navType === "destinationType" ? (
     <button
       className={`uppercase tracking-widest pb-1 bg-bottom bg-no-repeat duration-300 ${
-        displayObj.destination === title
+        display.destination === title
           ? `bg-white-gradient bg-3 font-bold text-white`
           : `bg-gray-gradient bg-0 hover:bg-2 hover:transition-bg-size hover:font-bold hover:text-white`
       }`}
@@ -54,7 +54,7 @@ const Nav = ({ title, navType }: Props) => {
   ) : navType === "crewType" ? (
     <button
       className={`rounded-full  ${
-        displayObj.crew === title
+        display.crew === title
           ? `h-[12px] w-[12px] xl:h-4 xl:w-4 bg-white`
           : `h-[10px] w-[10px] xl:h-[14px] xl:w-[14px] bg-gray-500 hover:bg-gray-400`
       }`}
@@ -63,7 +63,7 @@ const Nav = ({ title, navType }: Props) => {
   ) : navType === "technologyType" ? (
     <button
       className={`h-10 w-10 sm:h-14 sm:w-14 xl:h-20 xl:w-20 xl:text-24 rounded-full border border-gray-500 transition duration-500 ${
-        displayObj.technology === title
+        display.technology === title
           ? `bg-white text-black`
           : `hover:border-white `
       }`}

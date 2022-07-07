@@ -3,7 +3,7 @@ import {
   ContextInterface,
   crewTypes,
   destinationTypes,
-  displayObjTypes,
+  displayTypes,
   technologyTypes,
 } from "../@types/model";
 
@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const initialState: displayObjTypes = {
+const initialState: displayTypes = {
   destination: "moon",
   crew: "douglas",
   technology: "launchVehicle",
@@ -26,26 +26,26 @@ export const StateProvider = ({ children }: Props) => {
     setShowNav(false);
   };
 
-  const [displayObj, setDisplayObj] = useState<displayObjTypes>(initialState);
+  const [display, setdisplay] = useState<displayTypes>(initialState);
 
   const changeDestination = (clicked: destinationTypes) => {
-    setDisplayObj({ ...initialState, destination: clicked });
+    setdisplay({ ...initialState, destination: clicked });
   };
 
   const changeCrew = (clicked: crewTypes) => {
-    setDisplayObj({ ...initialState, crew: clicked });
+    setdisplay({ ...initialState, crew: clicked });
   };
 
   const changeTechnology = (clicked: technologyTypes) => {
-    setDisplayObj({ ...initialState, technology: clicked });
+    setdisplay({ ...initialState, technology: clicked });
   };
 
   const values = {
     showNav,
     setShowNav,
     closeNav,
-    displayObj,
-    setDisplayObj,
+    display,
+    setdisplay,
     changeDestination,
     changeCrew,
     changeTechnology,

@@ -6,7 +6,7 @@ import Nav from "./Nav";
 const crewNavs = Object.keys(data.crew);
 
 const Crew = () => {
-  const { closeNav, displayObj } = useStateContext();
+  const { closeNav, display } = useStateContext();
 
   return (
     <div className="bg-mobile-crew-bg sm:bg-tablet-crew-bg lg:bg-desktop-crew-bg bg-cover h-screen sm:h-fit">
@@ -23,8 +23,8 @@ const Crew = () => {
             <div className="w-5/6 border-b border-b-gray-600 sm:border-0">
               <img
                 className="object-contain h-[225px] sm:h-fit w-[450px] sm:w-fit"
-                src={data.crew[displayObj.crew].images.png}
-                alt={data.crew[displayObj.crew].name}
+                src={data.crew[display.crew].images.png}
+                alt={data.crew[display.crew].name}
               />
             </div>
           </div>
@@ -37,15 +37,15 @@ const Crew = () => {
             </nav>
             <div className="flex flex-col justify-center items-center text-center xl:text-left xl:items-start">
               <h4 className="uppercase font-bellefair text-gray-400 text-16 sm:text-24 xl:text-32">
-                {data.crew[displayObj.crew].role}
+                {data.crew[display.crew].role}
               </h4>
 
               <h3 className="uppercase font-bellefair text-24 sm:text-[38px] xl:text-56 tracking-wider mb-4">
-                {data.crew[displayObj.crew].name}
+                {data.crew[display.crew].name}
               </h3>
 
               <p className="text-body font-barlow px-8 sm:px-24 xl:p-0 xl:w-2/3 sm:mb-8 xl:text-lg leading-6">
-                {data.crew[displayObj.crew].bio}
+                {data.crew[display.crew].bio}
               </p>
             </div>
           </div>

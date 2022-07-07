@@ -6,7 +6,7 @@ import Nav from "./Nav";
 const technologyNavs = Object.keys(data.technology);
 
 const Technology = () => {
-  const { closeNav, displayObj } = useStateContext();
+  const { closeNav, display } = useStateContext();
 
   return (
     <div className="bg-mobile-tech-bg sm:bg-tablet-tech-bg lg:bg-desktop-tech-bg bg-cover h-screen sm:h-fit">
@@ -23,13 +23,13 @@ const Technology = () => {
           <div className="transition duration-500 mb-8 xl:w-2/5 w-full">
             <img
               className="xl:hidden object-contain h-[200px] sm:h-fit w-full"
-              src={data.technology[displayObj.technology].images.landscape}
-              alt={data.technology[displayObj.technology].name}
+              src={data.technology[display.technology].images.landscape}
+              alt={data.technology[display.technology].name}
             />
             <img
               className="hidden xl:inline object-contain h-[500px] float-right"
-              src={data.technology[displayObj.technology].images.portrait}
-              alt={data.technology[displayObj.technology].name}
+              src={data.technology[display.technology].images.portrait}
+              alt={data.technology[display.technology].name}
             />
           </div>
 
@@ -45,11 +45,11 @@ const Technology = () => {
               </h4>
 
               <h4 className="uppercase font-bellefair text-[24px] sm:text-[40px] mb-4 xl:mb-0 xl:text-56">
-                {data.technology[displayObj.technology].name}
+                {data.technology[display.technology].name}
               </h4>
 
               <p className="test text-body font-barlow px-8 sm:text-16 sm:w-[69%] xl:p-0 xl:w-2/3 sm:mb-8 xl:text-lg">
-                {data.technology[displayObj.technology].description}
+                {data.technology[display.technology].description}
               </p>
             </div>
           </div>
