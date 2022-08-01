@@ -10,7 +10,13 @@ const Destination = () => {
   const { closeNav, display } = useStateContext();
 
   return (
-    <div className="bg-mobile-destination-bg sm:bg-tablet-destination-bg lg:bg-desktop-destination-bg bg-cover h-[110vh] overflow-hidden">
+    <motion.div
+      className="bg-mobile-destination-bg sm:bg-tablet-destination-bg lg:bg-desktop-destination-bg bg-cover h-[110vh] overflow-hidden"
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0.5 }}
+      transition={{ duration: 1 }}
+    >
       <div className="sm:mb-6">
         <Header />
       </div>
@@ -24,10 +30,10 @@ const Destination = () => {
           <motion.div
             className="flex flex-col justify-center items-center pb-10 xl:flex-row xl:justify-between"
             key={data.destinations[display.destination].name}
-            initial={{ opacity: 0, y: "100vh" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100vh" }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <div className="xl:w-55% xl:flex xl:justify-center xl:items-center">
               <img
@@ -77,7 +83,7 @@ const Destination = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

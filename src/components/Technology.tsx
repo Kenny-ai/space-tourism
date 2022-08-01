@@ -10,7 +10,13 @@ const Technology = () => {
   const { closeNav, display } = useStateContext();
 
   return (
-    <div className="bg-mobile-tech-bg sm:bg-tablet-tech-bg lg:bg-desktop-tech-bg bg-cover h-screen sm:h-fit">
+    <motion.div
+      className="bg-mobile-tech-bg sm:bg-tablet-tech-bg lg:bg-desktop-tech-bg bg-cover h-screen sm:h-fit"
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0.5 }}
+      transition={{ duration: 1 }}
+    >
       {/* [130vh] md:h-[140vh] lg:h-[160vh] xl:h-[120vh] */}
       {/* h-screen sm:h-fit*/}
       <div className="sm:mb-6">
@@ -66,7 +72,7 @@ const Technology = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

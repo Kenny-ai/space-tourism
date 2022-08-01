@@ -22,7 +22,13 @@ const Crew = () => {
   };
 
   return (
-    <div className="bg-mobile-crew-bg sm:bg-tablet-crew-bg lg:bg-desktop-crew-bg bg-cover h-screen sm:h-fit xl:h-screen w-full overflow-hidden">
+    <motion.div
+      className="bg-mobile-crew-bg sm:bg-tablet-crew-bg lg:bg-desktop-crew-bg bg-cover h-screen sm:h-fit xl:h-screen w-full overflow-hidden"
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0.5 }}
+      transition={{duration: 1}}
+    >
       <div className="sm:mb-6">
         <Header />
       </div>
@@ -38,15 +44,16 @@ const Crew = () => {
             className="w-10 lg:w-16 text-xl cursor-pointer absolute left-4 md:left-8 top-[300px]"
             onClick={() => crewNavigation("backward")}
             whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           />
 
           <AnimatePresence exitBeforeEnter initial={false}>
             <motion.div
               className="flex flex-col justify-center items-center pb-10 sm:pb-0 sm:flex-col-reverse xl:flex-row-reverse xl:justify-between xl:mb-0 w-[80vw] m-auto"
               key={data.crew[display.crew].name}
-              initial={{ opacity: 0, x: "100vw" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "-100vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
             >
               <div className="flex justify-center items-center mb-8 sm:mb-0 xl:w-[55%]">
@@ -87,10 +94,11 @@ const Crew = () => {
             className="w-10 lg:w-16 cursor-pointer absolute right-4 md:right-8 top-[300px]"
             onClick={() => crewNavigation("forward")}
             whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

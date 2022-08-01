@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
+import { motion } from 'framer-motion';
 
 const Intro = () => {
   const { closeNav } = useStateContext();
 
   return (
-    <div className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative">
+    <motion.div
+      className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative"
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0.5 }}
+      transition={{ duration: 1 }}
+    >
       <Header />
 
       <div
@@ -36,10 +43,9 @@ const Intro = () => {
               Explore
             </button>
           </Link>
-
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
