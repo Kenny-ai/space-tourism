@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useStateContext } from "../Context/StateProvider";
 import Header from "./Header";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Intro = () => {
   const { closeNav } = useStateContext();
@@ -38,11 +38,17 @@ const Intro = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center py-24">
-          <Link to={"/destination"}>
-            <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
-              Explore
-            </button>
-          </Link>
+          <motion.button
+            className=""
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Link to={"/destination"}>
+              <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
+                Explore
+              </button>
+            </Link>
+          </motion.button>
         </div>
       </div>
     </motion.div>
