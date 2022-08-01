@@ -30,9 +30,9 @@ const Nav = ({ title, navType }: Props) => {
     if (navType === "destinationType") {
       const displayItem = localStorage.getItem("destinationDisplay");
       displayItem && changeDestination(JSON.parse(displayItem));
-    } else if (navType === "crewType") {
-      const displayItem = localStorage.getItem("crewDisplay");
-      displayItem && changeCrew(JSON.parse(displayItem));
+    // } else if (navType === "crewType") {
+    //   const displayItem = localStorage.getItem("crewDisplay");
+    //   displayItem && changeCrew(JSON.parse(displayItem));
     } else if (navType === "technologyType") {
       const displayItem = localStorage.getItem("technologyDisplay");
       displayItem && changeTechnology(JSON.parse(displayItem));
