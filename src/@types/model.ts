@@ -1,20 +1,21 @@
-export interface ContextInterface {
-  showNav: boolean;
-  setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
-  closeNav: () => void;
-  display: displayTypes;
-  setdisplay: React.Dispatch<React.SetStateAction<displayTypes>>;
-  changeDestination: (clicked: any) => void;
-  changeCrew: (clicked: any) => void;
-  changeTechnology: (clicked: any) => void;
-}
+import type { data } from "../data";
 
-export type destinationTypes = "moon" | "mars" | "europa" | "titan";
-export type crewTypes = "douglas" | "mark" | "victor" | "anouseh";
-export type technologyTypes = "launchVehicle" | "spaceport" | "spaceCapsule";
+export type destinationTypes = keyof typeof data.destinations;
+export type crewTypes = keyof typeof data.crew;
+export type technologyTypes = keyof typeof data.technology;
 
 export interface displayTypes {
   destination: destinationTypes;
   crew: crewTypes;
   technology: technologyTypes;
+}
+
+export interface ContextInterface {
+  showNav: boolean;
+  setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
+  closeNav: () => void;
+  display: displayTypes;
+  changeDestination: (clicked: destinationTypes) => void;
+  changeCrew: (clicked: crewTypes) => void;
+  changeTechnology: (clicked: technologyTypes) => void;
 }

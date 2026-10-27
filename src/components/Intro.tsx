@@ -1,58 +1,60 @@
-import { Link } from "react-router-dom";
-import { useStateContext } from "../Context/StateProvider";
-import Header from "./Header";
-import { motion } from "framer-motion";
+"use client";
 
-const Intro = () => {
-  const { closeNav } = useStateContext();
+import Link from "next/link";
+import { Reveal } from "./Animation";
+import { Arrow, Star } from "./Icons";
+import PlanetExplorer from "./space/PlanetExplorer";
 
+export default function Intro() {
   return (
-    <motion.div
-      className="bg-mobile-home-bg sm:bg-tablet-home-bg lg:bg-desktop-home-bg bg-cover h-screen sm:h-fit relative"
-      initial={{ opacity: 0.5 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0.5 }}
-      transition={{ duration: 1 }}
-    >
-      <Header />
-
-      <div
-        className="xl:flex xl:justify-around xl:items-center xl:h-screen sm:mt-12 xl:mt-0"
-        onClick={closeNav}
-      >
-        <div className="flex flex-col justify-center items-center mt-4">
-          <div className="text-center xl:text-left w-5/6 sm:w-min flex flex-col justify-center items-center">
-            <p className="uppercase font-barlow-condensed tracking-0.2 text-[16px] sm:text-28 text-body">
-              So you want to travel to
-            </p>
-            <h1 className="uppercase font-bellefair text-80 sm:text-150">
-              Space
-            </h1>
-            <p className="text-body font-barlow xl:text-lg leading-loose">
-              Let’s face it; if you want to go to space, you might as well
-              genuinely go to outer space and not hover kind of on the edge of
-              it. Well sit back, and relax because we’ll give you a truly out of
-              this world experience!
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-center items-center py-24">
-          <motion.button
-            className=""
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Link to={"/destination"}>
-              <button className="font-bellefair uppercase text-xl tracking-widest sm:text-32 text-black w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-white">
-                Explore
-              </button>
-            </Link>
-          </motion.button>
-        </div>
+    <div className="home-page page-container">
+      <div className="home-content">
+        <Reveal>
+          <p className="eyebrow hero-eyebrow">
+            <span className="small-rule" /> THE EXTRAORDINARY AWAITS
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h1 className="hero-title">
+            <span className="hero-pretitle">So, you want to travel to</span>
+            SPACE
+            <span className="hero-title-star">
+              <Star />
+            </span>
+          </h1>
+        </Reveal>
+        <Reveal delay={0.22}>
+          <p className="hero-description">
+            A little further from the ordinary.
+            <br className="desktop-break" /> An entirely new way to see
+            everything.
+          </p>
+          <p className="hero-body">
+            Leave the familiar behind. From the quiet of the Moon to the rings
+            of Saturn, your next great adventure is out there.
+          </p>
+        </Reveal>
+        <Reveal delay={0.32}>
+          <Link href="/destination" className="text-link">
+            DISCOVER YOUR DESTINATION <Arrow direction="diagonal" />
+          </Link>
+        </Reveal>
       </div>
-    </motion.div>
+      <Reveal className="home-earth-area" delay={0.3}>
+        <PlanetExplorer />
+        <Link href="/destination" className="earth-explore-link">
+          Explore the destinations <Arrow direction="diagonal" />
+        </Link>
+      </Reveal>
+      <Reveal className="home-bottom" delay={0.45}>
+        <div>
+          <span className="tiny-label">THE VIEW FROM HERE</span>
+          <p>Earth. Our first destination.</p>
+        </div>
+        <span className="home-coordinate">
+          25° 59′ 10.8″ N <span>↗</span>
+        </span>
+      </Reveal>
+    </div>
   );
-};
-
-export default Intro;
+}

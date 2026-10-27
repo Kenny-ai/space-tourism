@@ -1,0 +1,11 @@
+node_modules/
+.next/
+build/
+out/
+coverage/
+package-lock.json
+next-env.d.ts
+public/assets/
+src/assets/
+public/*.svg
+src/app/fonts/
