@@ -25,6 +25,12 @@ npm start
 
 `next build` prerenders all four pages. Deploy with a Next.js-compatible host or run `next start`; the old Create React App `build/` output and SPA fallback configuration are no longer used.
 
+## Vercel deployment
+
+The root `vercel.json` explicitly selects the Next.js framework, runs `npm run build`, and uses `.next` as the output directory. These values override any previous Create React App settings stored in Vercel, including the obsolete `build` output directory.
+
+Deploy the latest Git commit after changing this configuration. If updating the dashboard manually, select **Next.js** as the Framework Preset and clear the old Output Directory override.
+
 ## Routes and structure
 
 - `/`: Earth imagery, orbital Explore control, and destination discovery.
